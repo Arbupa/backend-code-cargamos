@@ -1,1 +1,3 @@
 # backend-code-cargamos
+## La parte 1 y 2 se encuentran dentro de la carpeta part1 ##
+Después actualizo bien el readme...
