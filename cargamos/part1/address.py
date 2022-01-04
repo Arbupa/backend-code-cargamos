@@ -1,55 +1,28 @@
-# from part1.package import Package
 
 
 class Address:
 
     def __init__(self, address1: str, postal_code: int, locality: str, city: str, state: str, country: str, address2="", notes="") -> None:
-        self.address_line_1 = address1
-        self.postal_code = postal_code
-        self.locality = locality
-        self.city = city
-        self.state = state
-        self.country = country
-        self.address_line_2 = address2
-        self.notes = notes
 
+        if type(postal_code) not in [float, int]:
+            raise TypeError("The attribute postal_code must be a number")
+
+        self.address_line_1 = str(address1)
+        self.postal_code = int(postal_code)
+        self.locality = str(locality)
+        self.city = str(city)
+        self.state = str(state)
+        self.country = str(country)
+        self.address_line_2 = str(address2)
+        self.notes = str(notes)
+
+    # function that concatenates all data and returns it like text.
     def get_full_address(self) -> str:
 
-        #   esto solo era para que se viera bonito xd
-        #     full_address = f"""
-        #    Address 1: {self.address_line_1}
-        #    Postal code: {self.postal_code}
-        #    Locality: {self.locality}
-        #    City: {self.city}
-        #    State: {self.state}
-        #    Country: {self.country}
-        #    Address 2: {self.address_line_2}
-        #    Notes: {self.notes}
-        #     """
-        # print(full_address)
         full_address = f"{self.address_line_1},{self.postal_code},{self.locality},{self.city},{self.state},{self.country},{self.address_line_2},{self.notes}"
+
         return full_address
 
 
-# def print_student(student, grade="Fifth"):
-#     print("{} is in {} grade.".format(student, grade))
-
-
-# print_student("arnol", "99")
-# a = 2
-# b = 43
-# full_address = f"""
-#         {a}
-#         {b}
-#         {a}
-#         {b}
-#         {a}
-#         {b}
-#         {a}
-#         {b}
-#         {a}
-#         {b}
-#         {a}
-#         {b}
-#         """
-# print("full_address es: ", full_address)
+# a = Address("address1", 35000, "my locality",
+#             "city random", "stateeee", "cocountry")
